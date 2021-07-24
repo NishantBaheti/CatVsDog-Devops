@@ -1,0 +1,22 @@
+version: "3.0"
+
+services:
+  frontend:
+    image: registry.hub.docker.com/nishantbaheti/catvsdog-ui:latest
+    ports:
+      - "3000:8080"
+    networks:
+      - cat-vs-dog-network
+
+  backend:
+    image: registry.hub.docker.com/nishantbaheti/catvsdog-ml-model-api:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - cat-vs-dog-network
+    volumes:
+      - ./logs:/app/applogs
+
+networks:
+    cat-vs-dog-network:
+      driver: bridge
