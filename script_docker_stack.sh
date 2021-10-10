@@ -1,1 +1,1 @@
-docker stack deploy --compose-file docker-compose.yml cat-vs-dog-app
+docker stack deploy --compose-file docker-compose.yaml cat-vs-dog-app
